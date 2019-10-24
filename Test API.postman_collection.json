@@ -1,19 +1,29 @@
 {
 	"info": {
-		"_postman_id": "4ffa9ca9-44f9-4110-862f-a0577314a293",
+		"_postman_id": "bc03bef5-0305-4445-986b-e633f6742e67",
 		"name": "Test API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "list all dog",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7bc2a687-f265-4268-92a1-b74fee5cbe92",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://dog.ceo/api/breeds/list/all",
 					"protocol": "https",
@@ -54,10 +64,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://dog.ceo/api/breeds/list/all",
 					"protocol": "https",
@@ -95,10 +101,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://dog.ceo/api/breed/retriever/list",
 					"protocol": "https",
@@ -136,10 +138,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://dog.ceo/api/breed/retriever/images/random",
 					"protocol": "https",
@@ -159,5 +157,6 @@
 			},
 			"response": []
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }
