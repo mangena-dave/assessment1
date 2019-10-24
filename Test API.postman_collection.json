@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "4ffa9ca9-44f9-4110-862f-a0577314a293",
+		"name": "Test API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list all dog",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dog.ceo/api/breeds/list/all",
+					"protocol": "https",
+					"host": [
+						"dog",
+						"ceo"
+					],
+					"path": [
+						"api",
+						"breeds",
+						"list",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verification retriever",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe3a9e7d-df49-4f42-b939-6d69d478a6d2",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"verify “retriever” breed is within the list.\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"retriever\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dog.ceo/api/breeds/list/all",
+					"protocol": "https",
+					"host": [
+						"dog",
+						"ceo"
+					],
+					"path": [
+						"api",
+						"breeds",
+						"list",
+						"all"
+					]
+				},
+				"description": "verify “retriever” breed is within the list.\n\nhttps://dog.ceo/api/breed/retriever/list"
+			},
+			"response": []
+		},
+		{
+			"name": "retriver sub-breeds",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c386eeec-67cd-40b4-833d-fb6648e5f5eb",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dog.ceo/api/breed/retriever/list",
+					"protocol": "https",
+					"host": [
+						"dog",
+						"ceo"
+					],
+					"path": [
+						"api",
+						"breed",
+						"retriever",
+						"list"
+					]
+				},
+				"description": "Perform an API request to produce a list of sub-breeds for “retriever”."
+			},
+			"response": []
+		},
+		{
+			"name": "random image",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4ba34937-d4b2-461a-b0ec-bf5dac16a4a3",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dog.ceo/api/breed/retriever/images/random",
+					"protocol": "https",
+					"host": [
+						"dog",
+						"ceo"
+					],
+					"path": [
+						"api",
+						"breed",
+						"retriever",
+						"images",
+						"random"
+					]
+				},
+				"description": "Perform an API request to produce a random image / link for the sub-breed “golden”"
+			},
+			"response": []
+		}
+	]
+}
